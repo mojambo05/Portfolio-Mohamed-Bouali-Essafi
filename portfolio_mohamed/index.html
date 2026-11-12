@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Portfolio de Mohamed Bouali — SOC Analyst L1, Blue Team, detecció, resposta a incidents, xarxes i forense.">
+  <title>Mohamed Bouali · SOC Analyst L1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#050a11;--panel:#09121d;--panel2:#0c1825;--line:#163047;--text:#e8f1f7;--muted:#8ea6b7;--cyan:#20d8ff;--cyan2:#76efff;--green:#50f0a1;--purple:#9a7cff;--orange:#ffb15c;--shadow:0 24px 70px rgba(0,0,0,.35);--radius:20px;--max:1240px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0%,rgba(32,216,255,.08),transparent 30%),radial-gradient(circle at 20% 40%,rgba(154,124,255,.06),transparent 28%),var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}button{font:inherit}.mono{font-family:"JetBrains Mono",monospace}.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:#fff;color:#000;padding:10px;z-index:99}
+    .topbar{position:fixed;inset:0 0 auto 0;height:68px;z-index:50;background:rgba(5,10,17,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(22,48,71,.8)}.topbar-inner{height:100%;max-width:var(--max);margin:auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:11px;font-weight:800}.brandmark{width:34px;height:34px;border:1px solid rgba(32,216,255,.65);border-radius:10px;display:grid;place-items:center;color:var(--cyan);font-family:"JetBrains Mono";font-size:13px;background:rgba(32,216,255,.06)}.brand small{display:block;color:var(--muted);font-size:10px;font-weight:500;letter-spacing:.08em}.nav{display:flex;gap:4px}.nav a{padding:9px 13px;color:#9db2c1;font-size:13px;border-radius:9px}.nav a:hover,.nav a.active{color:var(--text);background:rgba(32,216,255,.08)}.menu{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:8px 10px}
+    main{max-width:var(--max);margin:auto;padding:68px 22px 0}.hero{min-height:720px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:45px;padding:75px 0 55px;position:relative}.hero:before{content:"";position:absolute;inset:80px -5% 0;background:linear-gradient(90deg,transparent,rgba(32,216,255,.035),transparent);pointer-events:none}.eyebrow{font-family:"JetBrains Mono";font-size:12px;color:var(--cyan);letter-spacing:.08em;margin:0 0 16px}.hero h1{font-size:clamp(45px,7vw,86px);line-height:.95;letter-spacing:-.06em;margin:0 0 22px}.hero h1 span{color:var(--cyan);text-shadow:0 0 35px rgba(32,216,255,.18)}.role{font-size:20px;font-weight:600;margin:0 0 18px}.role b{color:var(--cyan2)}.pitch{max-width:700px;color:#a8bac7;font-size:16px;margin:0 0 27px}.cta{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 17px;border-radius:12px;border:1px solid var(--line);font-weight:700;font-size:13px}.btn.primary{background:var(--cyan);color:#001017;border-color:var(--cyan);box-shadow:0 12px 30px rgba(32,216,255,.15)}.btn.ghost:hover{border-color:var(--cyan);color:var(--cyan)}.meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:27px;color:#7f97a8;font-size:12px}.meta span:before{content:"•";color:var(--green);margin-right:7px}.terminal{background:linear-gradient(145deg,#08131e,#050a11);border:1px solid #16435b;border-radius:18px;box-shadow:var(--shadow),0 0 70px rgba(32,216,255,.07);overflow:hidden;position:relative}.terminal:after{content:"";position:absolute;inset:auto 15% -35%;height:80px;background:rgba(32,216,255,.16);filter:blur(45px)}.termbar{height:38px;border-bottom:1px solid #153044;display:flex;align-items:center;gap:7px;padding:0 13px}.termbar i{width:8px;height:8px;border-radius:50%;background:#274155}.termbar i:first-child{background:#ff6b7a}.termbar i:nth-child(2){background:#ffc45a}.termbar i:nth-child(3){background:#53e39c}.terminal pre{margin:0;padding:23px;min-height:330px;color:#a8c3d0;font:12px/2 "JetBrains Mono",monospace}.terminal .prompt{color:var(--green)}.terminal .accent{color:var(--cyan)}.cursor{display:inline-block;width:7px;height:14px;background:var(--cyan);vertical-align:-2px;animation:blink 1s steps(2) infinite}@keyframes blink{50%{opacity:0}}
+    section{padding:75px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:28px}.kicker{font:11px "JetBrains Mono";color:var(--cyan);text-transform:uppercase;letter-spacing:.12em;margin:0 0 8px}.section-head h2{font-size:32px;line-height:1.1;margin:0;letter-spacing:-.03em}.section-head p{max-width:590px;color:var(--muted);margin:0;font-size:14px}
+    .soclab{border:1px solid var(--line);background:linear-gradient(145deg,rgba(12,24,37,.95),rgba(5,10,17,.95));border-radius:var(--radius);padding:25px;box-shadow:var(--shadow);overflow:hidden}.soc-top{display:flex;justify-content:space-between;gap:20px;align-items:start}.soc-top h3{margin:0 0 5px;font-size:20px}.soc-top p{margin:0;color:var(--muted);font-size:13px}.live{font:10px "JetBrains Mono";color:var(--green);border:1px solid rgba(80,240,161,.25);background:rgba(80,240,161,.05);padding:7px 10px;border-radius:99px;white-space:nowrap}.flow{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:28px;align-items:center}.node{min-height:90px;border:1px solid #19374e;border-radius:13px;background:#07111b;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px;position:relative}.node strong{font-size:12px}.node small{font-size:9px;color:#7590a2;margin-top:5px}.node .ico{font-size:21px;color:var(--cyan);margin-bottom:4px}.arrow{color:#31536a;text-align:center;font-size:19px}.node.attack{border-color:rgba(255,112,135,.35)}.node.attack .ico{color:#ff7087}.node.detect{border-color:rgba(80,240,161,.35)}.node.detect .ico{color:var(--green)}
+    .projects{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}.card{grid-column:span 4;background:linear-gradient(160deg,#0b1723,#07101a);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.3s transform,.3s border-color,.3s box-shadow}.card:hover{transform:translateY(-5px);border-color:#28617d;box-shadow:0 20px 55px rgba(0,0,0,.3)}.card.featured{grid-column:span 8}.shot{height:205px;overflow:hidden;background:#07111a;border-bottom:1px solid var(--line);position:relative;cursor:pointer}.shot img{width:100%;height:100%;object-fit:cover;display:block;opacity:.88;transition:.4s transform,.4s opacity}.card:hover .shot img{transform:scale(1.035);opacity:1}.shot .label{position:absolute;left:13px;top:12px;background:rgba(5,10,17,.88);border:1px solid #28465a;border-radius:8px;padding:5px 8px;font:10px "JetBrains Mono";color:var(--cyan)}.card-body{padding:20px}.num{font:11px "JetBrains Mono";color:var(--cyan);margin-bottom:8px}.card h3{font-size:18px;line-height:1.25;margin:0 0 8px}.card p{font-size:13px;color:var(--muted);margin:0 0 15px}.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{font:10px "JetBrains Mono";color:#a7becb;border:1px solid #1a3b50;background:#08131e;padding:5px 7px;border-radius:7px}.card-foot{margin-top:17px;display:flex;justify-content:space-between;align-items:center}.link{color:var(--cyan);font-size:12px;font-weight:700}.evidence{font-size:10px;color:#708999}
+    .case-panel{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;margin-top:22px}.panel{background:#08131e;border:1px solid var(--line);border-radius:var(--radius);padding:23px}.panel h3{margin:0 0 8px;font-size:18px}.panel p,.panel li{font-size:13px;color:#9eb2bf}.panel ul{padding-left:19px;margin:14px 0 0}.timeline{position:relative;padding-left:25px}.timeline:before{content:"";position:absolute;left:6px;top:5px;bottom:5px;width:1px;background:#21445a}.event{position:relative;margin:0 0 19px}.event:last-child{margin-bottom:0}.event:before{content:"";position:absolute;left:-22px;top:5px;width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px rgba(32,216,255,.55)}.event time{font:10px "JetBrains Mono";color:#547287;display:block}.event strong{font-size:12px}.event span{display:block;color:#8299a8;font-size:11px}
+    .skills{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.skill{background:#08131e;border:1px solid var(--line);border-radius:15px;padding:18px}.skill .big{font-size:24px;margin-bottom:12px}.skill h3{font-size:14px;margin:0 0 9px}.skill p{font-size:11px;color:#8299a8;margin:0}.skill .tags{margin-top:12px}.training{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px}.edu{border:1px solid var(--line);background:#08131e;border-radius:15px;padding:17px}.edu b{display:block;font-size:13px}.edu span{font-size:11px;color:#7890a1}
+    .contact{display:grid;grid-template-columns:1fr .8fr;gap:20px}.contact-main,.contact-side{border:1px solid var(--line);background:linear-gradient(145deg,#0a1723,#07101a);border-radius:var(--radius);padding:27px}.contact h2{font-size:36px;margin:0 0 9px}.contact p{color:var(--muted);font-size:14px}.contact-list{display:grid;gap:10px;margin-top:22px}.contact-item{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid #122b3c;font-size:13px}.contact-item span:first-child{color:#6e8999}.contact-item a{color:var(--cyan)}.note{font-size:11px!important;color:#607888!important}.contact-side h3{margin-top:0}.contact-side ul{padding-left:18px;color:#91a7b4;font-size:12px}.footer{border-top:1px solid var(--line);padding:22px 0 35px;color:#668092;font-size:11px;display:flex;justify-content:space-between;gap:20px}.footer b{color:#a6bbc7}
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px;z-index:100}.modal.open{display:flex}.modal-box{max-width:1040px;width:100%;max-height:90vh;overflow:auto;background:#07111b;border:1px solid #24516a;border-radius:22px;box-shadow:0 40px 120px #000;padding:24px}.modal-head{display:flex;justify-content:space-between;gap:20px;align-items:start}.close{background:#0b1a27;border:1px solid #234258;color:#b9cbd5;border-radius:9px;padding:7px 10px;cursor:pointer}.modal h2{margin:0 0 5px}.modal .sub{color:#71899a;font-size:12px}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
+    .gallery-item{position:relative;border-radius:10px;overflow:hidden;background:#03080d;border:1px solid #17384c;cursor:pointer}
+    .gallery-item img{width:100%;height:170px;object-fit:cover;display:block;transition:transform .3s}
+    .zoom-overlay{position:absolute;inset:0;background:rgba(5,10,17,.6);color:var(--cyan);display:flex;align-items:center;justify-content:center;font:12px "JetBrains Mono", monospace;font-weight:600;opacity:0;transition:.3s;backdrop-filter:blur(2px)}
+    .gallery-item:hover img{transform:scale(1.05)}
+    .gallery-item:hover .zoom-overlay{opacity:1}
+    .modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}.modal-grid .panel{padding:17px}.modal-grid h4{margin:0 0 7px;font-size:12px;color:var(--cyan)}
+    .reveal{opacity:0;transform:translateY(18px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
+    .case-btn {display: inline-flex;align-items: center;gap: 6px;padding: 8px 14px;background: rgba(32, 216, 255, 0.05);border: 1px solid rgba(32, 216, 255, 0.2);border-radius: 8px;color: var(--cyan);font-size: 11px;font-weight: 600;cursor: pointer;transition: all 0.2s ease;}
+    .case-btn:hover {background: rgba(32, 216, 255, 0.15);border-color: rgba(32, 216, 255, 0.5);transform: translateY(-2px);box-shadow: 0 4px 12px rgba(32, 216, 255, 0.15);}
+    .lightbox {position: fixed;inset: 0;background: rgba(0,0,0,.92);z-index: 200;display: none;align-items: center;justify-content: center;padding: 20px;backdrop-filter: blur(5px);}
+    .lightbox.open {display: flex;}
+    .lightbox img {max-width: 100%;max-height: 90vh;border-radius: 8px;object-fit: contain;box-shadow: 0 20px 60px rgba(0,0,0,.7);}
+    .close-lb {position: absolute;top: 25px;right: 25px;background: rgba(5,10,17,.8);border: 1px solid var(--cyan);color: var(--cyan);width: 40px;height: 40px;border-radius: 50%;font-size: 18px;cursor: pointer;display: grid;place-items: center;transition: .2s;}
+    .close-lb:hover {background: var(--cyan);color: #000;}
+    @media(max-width:900px){.nav{display:none}.menu{display:block}.nav.open{display:flex;position:absolute;top:68px;left:0;right:0;padding:10px 18px;background:rgba(5,10,17,.97);border-bottom:1px solid var(--line);flex-direction:column}.hero{grid-template-columns:1fr;min-height:auto;padding-top:60px}.terminal{max-width:720px}.flow{grid-template-columns:1fr 25px 1fr 25px 1fr;justify-content:center}.flow .node:nth-of-type(4),.flow .node:nth-of-type(5),.flow .node:nth-of-type(6),.flow .node:nth-of-type(7){display:none}.skills{grid-template-columns:1fr 1fr}.card,.card.featured{grid-column:span 6}.case-panel,.contact{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){main{padding-left:15px;padding-right:15px}.hero h1{font-size:48px}.section-head{display:block}.section-head p{margin-top:10px}.flow{grid-template-columns:1fr}.flow .arrow{display:none}.flow .node:nth-of-type(n){display:flex}.projects{grid-template-columns:1fr}.card,.card.featured{grid-column:span 1}.skills,.training{grid-template-columns:1fr}.contact-item{display:block}.contact-item a{display:block;margin-top:4px}.gallery,.modal-grid{grid-template-columns:1fr}.shot{height:190px}.soc-top{display:block}.live{display:inline-block;margin-top:12px}.footer{display:block}.footer span{display:block;margin-top:7px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{transition:none}.card{transition:none}.terminal .cursor{animation:none}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#home">Saltar al contingut</a>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="#home"><span class="brandmark">MB</span><span>Mohamed Bouali<small>DEFENSIVE SECURITY</small></span></a>
+  <nav class="nav" id="nav">
+    <a href="#home" class="active">Inici</a>
+    <a href="#soc">SOC Lab</a>
+    <a href="#projects">Projectes</a>
+    <a href="#skills">Competències</a>
+    <a href="#contact">Contacte</a>
+    <div style="width:1px;height:14px;background:var(--line);margin:0 8px"></div>
+    <a href="es.html" style="padding:4px 8px;color:var(--cyan);font-weight:700">ES</a>
+  </nav>
+  <button class="menu" id="menu" aria-label="Obrir menú">☰</button>
+</div></header>
+
+<main>
+<section class="hero" id="home">
+  <div class="reveal">
+    <p class="eyebrow">// TERRES DE L'EBRE · TARRAGONA</p>
+    <h1>Hola, sóc<br><span>Mohamed Bouali</span></h1>
+    <p class="role"><b>SOC Analyst L1</b> · Blue Team · Detection & Incident Response</p>
+    <p class="pitch">Format en administració de sistemes en xarxa i especialitzat en ciberseguretat. Construeixo laboratoris, genero telemetria, investigo evidències i documento què ha passat — des del trànsit de xarxa fins a la memòria RAM.</p>
+    <div class="cta"><a class="btn primary" href="#projects">Veure projectes →</a><a class="btn ghost" href="#contact">Parlem</a></div>
+    <div class="meta"><span>Disponible per a oportunitats</span><span>2025/26 · CETI</span><span>Defensive mindset</span></div>
+  </div>
+  <div class="terminal reveal" aria-label="Terminal decorativa">
+    <div class="termbar"><i></i><i></i><i></i></div>
+    <pre><span class="prompt">moja@lab</span>:~$ whoami
+Moha Bouali
+
+<span class="prompt">moja@lab</span>:~$ cat focus.txt
+<span class="accent">SOC ANALYST L1</span>
+
+[+] SIEM & log analysis
+[+] Network detection
+[+] Incident response
+[+] Digital forensics
+[+] Linux / Windows
+[+] MITRE ATT&amp;CK
+
+<span class="prompt">moja@lab</span>:~$ <span id="termcmd"></span><span class="cursor"></span></pre>
+  </div>
+</section>
+
+<section id="soc">
+  <div class="section-head reveal"><div><p class="kicker">01 · SOC LAB</p><h2>De l'atac a la investigació</h2></div><p>La part que més vull ensenyar: no només conec eines, sinó que entenc el flux defensiu que les connecta.</p></div>
+  <div class="soclab reveal"><div class="soc-top"><div><h3>Arquitectura del meu entorn defensiu</h3><p>Captura → detecció → correlació → investigació → resposta</p></div><span class="live">● LAB / OPERATIONAL</span></div>
+    <div class="flow">
+      <div class="node"><div class="ico">◎</div><strong>Internet</strong><small>trànsit</small></div><div class="arrow">→</div>
+      <div class="node attack"><div class="ico">⚠</div><strong>Atac</strong><small>simulació</small></div><div class="arrow">→</div>
+      <div class="node detect"><div class="ico">◉</div><strong>Suricata</strong><small>IDS</small></div><div class="arrow">→</div>
+      <div class="node"><div class="ico">◌</div><strong>Zeek</strong><small>telemetria</small></div><div class="arrow">→</div>
+      <div class="node"><div class="ico">◈</div><strong>Security Onion</strong><small>sensor</small></div><div class="arrow">→</div>
+      <div class="node"><div class="ico">▦</div><strong>Elastic SIEM</strong><small>alertes</small></div><div class="arrow">→</div>
+      <div class="node detect"><div class="ico">⌕</div><strong>Analista</strong><small>IR</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-head reveal"><div><p class="kicker">02 · EVIDÈNCIA</p><h2>Projectes que puc ensenyar</h2></div><p>He convertit les activitats i memòries de formació en casos curts: què vaig fer, amb quina eina i quina evidència en queda.</p></div>
+  <div class="projects">
+    <article class="card featured reveal" data-case="dual">
+  <div class="shot">
+    <img src="assets/dual-cover.jpg" alt="Pràctiques FP Dual a REDESSA">
+    <span class="label">CASE #00 · IT SYSTEMS</span>
+  </div>
+  <div class="card-body">
+    <div class="num">00 / FP DUAL</div>
+    <h3>Administració de sistemes i xarxes corporatives</h3>
+    <p>Un any d'experiència real muntant servidors, gestionant switches Cisco, segmentant amb VLANs i administrant flotes mòbils amb Samsung Knox.</p>
+    <div class="tags">
+      <span class="tag">Cisco</span>
+      <span class="tag">VLANs</span>
+      <span class="tag">Samsung Knox</span>
+      <span class="tag">Cambium</span>
+      <span class="tag">Hardware</span>
+    </div>
+    <div class="card-foot">
+      <button class="case-btn" data-case="dual">Explorar cas →</button>
+      <span class="evidence">REDESSA · 2024/25</span>
+    </div>
+  </div>
+</article>      
+    <article class="card featured reveal" data-case="soc"><div class="shot"><div class="label">CASE #01 · SOC / SIEM</div><div style="height:100%;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,rgba(32,216,255,.15),transparent 42%),linear-gradient(135deg,#07131e,#03080d)"><div style="font:13px 'JetBrains Mono';color:#77eaff;text-align:center">SURICATA → ZEEK → ELASTIC<br><span style="color:#6d8c9f">DETECTION PIPELINE</span></div></div></div><div class="card-body"><div class="num">01 / PROJECTE FINAL</div><h3>SOC complet amb Security Onion, pensat per a IA</h3><p>Disseny i desplegament d'un node defensiu amb captura, SIEM, deteccions pròpies, governança RGPD/ENS i mitigació automàtica.</p><div class="tags"><span class="tag">Security Onion</span><span class="tag">Suricata</span><span class="tag">Zeek</span><span class="tag">Elastic</span><span class="tag">SaltStack</span><span class="tag">Fail2Ban</span></div><div class="card-foot"><button class="case-btn" data-case="soc">Explorar cas →</button><span class="evidence">CETI · 2025/26</span></div></div></article>
+
+    <article class="card reveal" data-case="forensic"><div class="shot"><img src="assets/forensic-06.jpg" alt="Captura de l'anàlisi forense amb Volatility 3"><span class="label">CASE #02 · FORENSICS</span></div><div class="card-body"><div class="num">02 / MEMÒRIA RAM</div><h3>Anàlisi forense d'una captura de memòria</h3><p>Procés, xarxa, DLLs i cerca de codi injectat amb Volatility 3, documentat pas a pas.</p><div class="tags"><span class="tag">Volatility 3</span><span class="tag">Windows</span><span class="tag">Memory Forensics</span></div><div class="card-foot"><button class="case-btn" data-case="forensic">Explorar cas →</button><span class="evidence">5024 · CETI</span></div></div></article>
+
+    <article class="card reveal" data-case="network"><div class="shot"><img src="assets/firewall-07.jpg" alt="Captura d'un escaneig Nmap"><span class="label">CASE #03 · NETWORK</span></div><div class="card-body"><div class="num">03 / NETWORK SECURITY</div><h3>Reconeixement, escaneig i trànsit</h3><p>OSINT, Nmap, Wireshark i simulacions d'atac per entendre com apareixen les traces a la xarxa.</p><div class="tags"><span class="tag">Nmap</span><span class="tag">Wireshark</span><span class="tag">Kali</span><span class="tag">theHarvester</span></div><div class="card-foot"><button class="case-btn" data-case="network">Explorar cas →</button><span class="evidence">Hacking Ètic</span></div></div></article>
+
+    <article class="card reveal" data-case="owasp"><div class="shot"><img src="assets/owasp-13.jpg" alt="Captura de finalització de l'activitat OWASP Top 10"><span class="label">CASE #04 · APPSEC</span></div><div class="card-body"><div class="num">04 / SECURE PRODUCTION</div><h3>OWASP Top 10 · IAAA Failures</h3><p>Pràctica de control d'accés, autenticació i logging/alerting dins de TryHackMe.</p><div class="tags"><span class="tag">OWASP</span><span class="tag">TryHackMe</span><span class="tag">Access Control</span><span class="tag">Auth</span></div><div class="card-foot"><button class="case-btn" data-case="owasp">Explorar cas →</button><span class="evidence">5023 · CETI</span></div></div></article>
+
+    <article class="card reveal" data-case="deser"><div class="shot"><img src="assets/deser-04.jpg" alt="Captura d'una pràctica de deserialització PHP"><span class="label">CASE #05 · APPSEC</span></div><div class="card-body"><div class="num">05 / DESERIALITZACIÓ</div><h3>Deserialització PHP i Java</h3><p>Pràctiques amb Burp Suite i laboratoris de deserialització per entendre vulnerabilitats d'aplicació.</p><div class="tags"><span class="tag">Burp Suite</span><span class="tag">PHP</span><span class="tag">Java</span></div><div class="card-foot"><button class="case-btn" data-case="deser">Explorar cas →</button><span class="evidence">5023 · CETI</span></div></div></article>
+
+    <article class="card reveal" data-case="firewall"><div class="shot"><img src="assets/firewall-08.jpg" alt="Captura de logs durant l'escaneig de ports"><span class="label">CASE #06 · HARDENING</span></div><div class="card-body"><div class="num">06 / FIREWALL + LOGS</div><h3>Firewall i simulació d'atacs</h3><p>Windows Firewall, UFW, logs, Nmap, força bruta SSH i simulació HTTP flood.</p><div class="tags"><span class="tag">UFW</span><span class="tag">Windows Firewall</span><span class="tag">Nmap</span><span class="tag">Hydra</span><span class="tag">hping3</span></div><div class="card-foot"><button class="case-btn" data-case="firewall">Explorar cas →</button><span class="evidence">Tasca 5.5 · CETI</span></div></div></article>
+  </div>
+</section>
+
+<section>
+  <div class="section-head reveal"><div><p class="kicker">03 · INVESTIGACIÓ</p><h2>Com treballaria un incident</h2></div><p>Un petit exemple visual del tipus de pensament que vull portar a un SOC: alerta → evidència → context → resposta.</p></div>
+  <div class="case-panel">
+    <div class="panel reveal"><h3><span style="color:var(--cyan)">INC-SSH-001</span> · Possible força bruta SSH</h3><ul><li>Detectar patró d'intents fallits.</li><li>Identificar IP d'origen i host afectat.</li><li>Contrastar telemetria de xarxa i logs.</li><li>Mapar l'activitat a MITRE ATT&amp;CK.</li><li>Aplicar mitigació i documentar el tancament.</li></ul></div>
+    <div class="panel reveal"><div class="timeline"><div class="event"><time>14:02:11</time><strong>Alerta generada</strong><span>Patró de força bruta SSH</span></div><div class="event"><time>14:02:18</time><strong>Font identificada</strong><span>IP / host / context</span></div><div class="event"><time>14:02:24</time><strong>MITRE ATT&amp;CK</strong><span>Classificació de la tècnica</span></div><div class="event"><time>14:02:31</time><strong>Mitigació</strong><span>Bloqueig / hardening / regla</span></div><div class="event"><time>14:02:45</time><strong>Incident documentat</strong><span>Evidències + conclusió</span></div></div></div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-head reveal"><div><p class="kicker">04 · STACK</p><h2>Competències amb evidència</h2></div><p>La idea és que cada skill pugui portar a un projecte, una captura o una explicació concreta.</p></div>
+  <div class="skills">
+    <div class="skill reveal"><div class="big">◉</div><h3>Detecció i resposta</h3><p>Construcció i lectura de telemetria defensiva.</p><div class="tags"><span class="tag">Security Onion</span><span class="tag">Suricata</span><span class="tag">Zeek</span><span class="tag">Elastic</span><span class="tag">Wazuh</span></div></div>
+    <div class="skill reveal"><div class="big">⌁</div><h3>Xarxes i sistemes</h3><p>Administració, hardening i anàlisi de trànsit.</p><div class="tags"><span class="tag">Linux</span><span class="tag">Windows Server</span><span class="tag">Nmap</span><span class="tag">Wireshark</span></div></div>
+    <div class="skill reveal"><div class="big">⌕</div><h3>Forense i OSINT</h3><p>Recollida i interpretació d'evidències digitals.</p><div class="tags"><span class="tag">Volatility 3</span><span class="tag">CyberChef</span><span class="tag">theHarvester</span><span class="tag">Metasploit</span></div></div>
+    <div class="skill reveal"><div class="big">▣</div><h3>Governança</h3><p>Seguretat pensada també des del compliment.</p><div class="tags"><span class="tag">ENS</span><span class="tag">RGPD</span><span class="tag">DRP / BCP</span></div></div>
+  </div>
+  <div class="training reveal"><div class="edu"><b>5023 · Posada en producció segura</b><span>Institut Vidal i Barraquer · CETI · 2025/26</span></div><div class="edu"><b>5024 · Anàlisi forense informàtic</b><span>Institut Vidal i Barraquer · CETI · 2025/26</span></div></div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <div class="contact-main reveal"><p class="kicker">05 · CONTACTE</p><h2>Busco el primer SOC.</h2><p>Si tens una vacant L1, pràctiques o un entorn on pugui continuar creixent en Blue Team, m'interessa parlar-ne.</p><div class="contact-list"><div class="contact-item"><span>Correu</span><a href="mailto:boualimoha05@gmail.com">boualimoha05@gmail.com</a></div><div class="contact-item"><span>LinkedIn</span><a href="https://www.linkedin.com/in/mohamed-bouali-essafi" target="_blank" rel="noreferrer">www.linkedin.com/in/mohamed-bouali-essafi</a></div><div class="contact-item"><span>Ubicació</span><span>Terres de l'Ebre, Tarragona · disposat a traslladar-me</span></div></div><p class="note">  </p></div>
+    <aside class="contact-side reveal"><h3>Què trobaràs aquí</h3><ul><li>Casos pràctics i captures reals de la formació.</li><li>Laboratori SOC i flux de detecció.</li><li>Network security, forense i AppSec.</li><li>Documentació orientada a evidències.</li></ul><a class="btn ghost" href="#projects">Explorar casos →</a></aside>
+  </div>
+</section>
+
+<footer class="footer"><b>Mohamed Bouali</b><span>SOC Analyst L1 · Blue Team · Detection & Incident Response · © 2026</span></footer>
+</main>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-box"><div class="modal-head"><div><h2 id="modalTitle">Projecte</h2><div class="sub" id="modalSub"></div></div><button class="close" id="close">Tancar ✕</button></div><div class="modal-grid"><div class="panel"><h4>QUÈ VAIG FER</h4><div id="modalDesc"></div></div><div class="panel"><h4>EINES / APRENENTATGE</h4><div id="modalTools"></div></div></div><div class="gallery" id="gallery"></div></div></div>
+
+<div class="lightbox" id="lightbox">
+  <button class="close-lb" id="closeLb">✕</button>
+  <img src="" alt="" id="lbImg">
+</div>
+
+<script>
+const data={
+ dual:{title:'Administració de sistemes i xarxes corporatives',sub:'FP Dual · REDESSA · 2024/25',desc:'Muntatge de maquinari de servidors, configuració de switches Cisco amb VLANs per segmentar la xarxa, gestió massiva de dispositius amb Samsung Knox (MDM) i configuració de punts d\'accés Cambium. També vaig donar suport a esdeveniments d\'alta concurrència com ExpoReus i en tasques de clonació d\'equips.',tools:'Cisco · Cambium Networks · Samsung Knox · XCP-ng · Acronis · Cablejat de xarxa',imgs:['assets/dual-switches.jpg','assets/dual-knox.jpg','assets/dual-wifi.jpg','assets/dual-server.jpg']},
+ soc:{title:'SOC complet amb Security Onion',sub:'Projecte final d’especialització · CETI · 2025/26',desc:'Disseny i desplegament d’un node defensiu orientat a generar un dataset net i fiable per a una futura anàlisi amb IA. Inclou captura en mode promiscu, Suricata + Zeek, Elastic/Fleet, tres regles pròpies de detecció, anonimització RGPD amb SHA-256, controls ENS i Fail2Ban.',tools:'Security Onion · Suricata · Zeek · Elastic Stack · Fleet · SaltStack · Fail2Ban · CyberChef · Kali Linux',imgs:['assets/soc-setup.jpg','assets/soc-suricata.jpg','assets/soc-dashboard.jpg','assets/soc-cyberchef.jpg']},
+ forensic:{title:'Anàlisi forense de memòria RAM',sub:'5024 · Anàlisi forense informàtic · CETI · 2025/26',desc:'Anàlisi d’un abocament de memòria amb Volatility 3: identificació de processos, arbre de processos, abocament d’executables i DLLs, connexions de xarxa amb netscan i cerca de codi injectat amb malfind, incloent revisió de falsos positius.',tools:'Volatility 3 · Windows memory forensics · process tree · netscan · malfind',imgs:['assets/forensic-03.jpg','assets/forensic-06.jpg','assets/forensic-09.jpg','assets/forensic-10.jpg']},
+ network:{title:'Reconeixement, escaneig i trànsit',sub:'Hacking Ètic · Institut Vidal i Barraquer · CETI',desc:'Cicle pràctic de reconeixement OSINT, escaneig de serveis i versions, captura de trànsit i observació de les traces que deixa una activitat ofensiva sobre la xarxa.',tools:'theHarvester · Nmap · Wireshark · Kali Linux',imgs:['assets/firewall-07.jpg','assets/firewall-04.jpg']},
+ owasp:{title:'OWASP Top 10 · IAAA Failures',sub:'5023 · Posada en producció segura · TryHackMe',desc:'Pràctica sobre Broken Access Control, Authentication Failures i Logging & Alerting Failures. Les captures mostren el recorregut per les tasques i la seva finalització.',tools:'OWASP Top 10 · TryHackMe · Access Control · Authentication · Logging & Alerting',imgs:['assets/owasp-03.jpg','assets/owasp-05.jpg','assets/owasp-08.jpg','assets/owasp-13.jpg']},
+ deser:{title:'Deserialització PHP i Java',sub:'5023 · Posada en producció segura · CETI',desc:'Laboratoris pràctics de modificació de dades serialitzades, object injection en PHP, deserialització Java i desenvolupament de cadenes de gadgets dins d’entorns de pràctica.',tools:'Burp Suite · PHP · Java · deserialització',imgs:['assets/deser-03.jpg','assets/deser-04.jpg','assets/deser-09.jpg','assets/deser-16.jpg']},
+ firewall:{title:'Firewall i simulació d’atacs',sub:'Tasca 5.5 · Configuració de firewalls i simulació d’atacs · CETI',desc:'Configuració de registres de Windows, visualització de logs, UFW en Linux, filtratge i monitorització, escaneig de ports i anàlisi de logs, força bruta SSH amb Hydra i simulació d’HTTP flood amb hping3.',tools:'Windows Firewall · UFW · Nmap · Hydra · hping3 · logs',imgs:['assets/firewall-03.jpg','assets/firewall-05.jpg','assets/firewall-07.jpg','assets/firewall-08.jpg']}
+};
+const modal=document.getElementById('modal'), title=document.getElementById('modalTitle'), sub=document.getElementById('modalSub'), desc=document.getElementById('modalDesc'), tools=document.getElementById('modalTools'), gallery=document.getElementById('gallery');
+const lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg'), closeLb=document.getElementById('closeLb');
+
+function openCase(key){const d=data[key];if(!d)return;title.textContent=d.title;sub.textContent=d.sub;desc.textContent=d.desc;tools.textContent=d.tools;gallery.innerHTML=d.imgs.length?d.imgs.map((x,i)=>`<div class="gallery-item"><img src="${x}" alt="Captura d'evidència ${i+1} de ${d.title}" loading="lazy"><div class="zoom-overlay">Fer zoom</div></div>`).join(''):'<div class="panel" style="grid-column:1/-1">El projecte SOC principal es presenta sobretot mitjançant l’arquitectura i les deteccions descrites a la portada. Quan tinguis captures del Security Onion/Elastic, es poden afegir aquí.</div>';modal.classList.add('open');document.body.style.overflow='hidden'}
+document.querySelectorAll('.case-btn').forEach(b=>b.addEventListener('click',()=>openCase(b.dataset.case)));
+document.querySelectorAll('.shot').forEach(s=>s.addEventListener('click',function(){openCase(this.closest('.card').dataset.case);}));
+
+document.getElementById('close').onclick=()=>{modal.classList.remove('open');document.body.style.overflow=''};
+modal.addEventListener('click',e=>{if(e.target===modal){modal.classList.remove('open');document.body.style.overflow=''}});
+
+gallery.addEventListener('click', e => {
+  const item = e.target.closest('.gallery-item');
+  if(item) {
+    lbImg.src = item.querySelector('img').src;
+    lb.classList.add('open');
+  }
+});
+closeLb.onclick = () => lb.classList.remove('open');
+lb.onclick = e => { if(e.target === lb) lb.classList.remove('open'); };
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    if(lb.classList.contains('open')) {
+      lb.classList.remove('open');
+    } else if(modal.classList.contains('open')) {
+      modal.classList.remove('open');
+      document.body.style.overflow='';
+    }
+  }
+});
+
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.08});document.querySelectorAll('.reveal').forEach(x=>obs.observe(x));
+const menu=document.getElementById('menu'),nav=document.getElementById('nav');menu.onclick=()=>nav.classList.toggle('open');nav.querySelectorAll('a').forEach(a=>a.onclick=()=>nav.classList.remove('open'));
+const sections=[...document.querySelectorAll('main section[id]')], links=[...document.querySelectorAll('.nav a')];const navObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-35% 0px -55% 0px'});sections.forEach(s=>navObs.observe(s));
+const cmds=['./start-soc-lab.sh','./investigate --incident INC-SSH-001','cat /var/log/auth.log'];let ci=0,pi=0;function type(){const s=cmds[ci];document.getElementById('termcmd').textContent=s.slice(0,pi++);if(pi>s.length){setTimeout(()=>{pi=0;ci=(ci+1)%cmds.length;type()},1800)}else setTimeout(type,55)}type();
+</script>
+</body></html>
